@@ -28,6 +28,7 @@
     <string name="msg_password_required">Password is required</string>
     <string name="msg_username_invalid">That username is invalid, enter a valid email</string>
     <string name="msg_credentials_invalid">The provided credentials are invalid</string>
+    <string name="msg_loading">loading\u2026</string>
 
     <!-- toolbars -->
     <string name="tb_pending_requests">Pending requests</string>

@@ -85,8 +85,8 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setHome() {
+        tvName.setText(R.string.msg_loading);
         FirebaseAuth auth = FirebaseAuth.getInstance();
-        tvName.setText(auth.getCurrentUser().getEmail());
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         database.getReference("drivers").child(auth.getCurrentUser().getUid())
                 .addValueEventListener(new ValueEventListener() {
