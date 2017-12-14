@@ -10,6 +10,9 @@
     <!-- buttons -->
     <string name="btn_log_in">Log in</string>
 
+    <!-- dialogs -->
+    <string name="dlg_message_please_wait">Please wait\u2026</string>
+
     <!-- edittexts -->
     <string name="et_default_avail_space">1</string>
     <string name="et_hint_username">Username</string>
@@ -17,6 +20,14 @@
 
     <!-- images -->
     <string name="img_description">Image</string>
+
+    <!-- messages -->
+    <string name="msg_an_error_occurred">An error occurred</string>
+    <string name="msg_no_network">No network connection</string>
+    <string name="msg_username_required">Username is required</string>
+    <string name="msg_password_required">Password is required</string>
+    <string name="msg_username_invalid">That username is invalid, enter a valid email</string>
+    <string name="msg_credentials_invalid">The provided credentials are invalid</string>
 
     <!-- toolbars -->
     <string name="tb_pending_requests">Pending requests</string>
@@ -30,5 +41,6 @@
     <string name="tv_avail_space">Avail bus space</string>
     <string name="tv_pending_requests">Pending requests</string>
     <string name="tv_avail_space_for">Avail bus space for</string>
+    <string name="tv_spaces_available">\u0020spaces available</string>
 
 </resources>

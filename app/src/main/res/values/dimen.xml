@@ -17,6 +17,14 @@
     <dimen name="four">4dp</dimen>
     <dimen name="five">5dp</dimen>
 
+    <!-- progress bar -->
+    <dimen name="progress_bar_width">16dp</dimen>
+    <dimen name="progress_bar_height">16dp</dimen>
+    <dimen name="progress_bar_thickness">2dp</dimen>
+    <dimen name="progress_bar_width_large">32dp</dimen>
+    <dimen name="progress_bar_height_large">32dp</dimen>
+    <dimen name="progress_bar_thickness_large">3dp</dimen>
+
     <!-- text -->
     <dimen name="text_avail_space">96sp</dimen>
     <dimen name="text_large">24sp</dimen>
