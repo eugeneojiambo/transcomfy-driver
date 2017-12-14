@@ -1,0 +1,34 @@
+<resources>
+
+    <!-- default -->
+    <string name="app_name">TranscomfyDriver</string>
+
+    <!-- actions -->
+    <string name="act_log_out">Log out</string>
+    <string name="act_done">Done</string>
+
+    <!-- buttons -->
+    <string name="btn_log_in">Log in</string>
+
+    <!-- edittexts -->
+    <string name="et_default_avail_space">1</string>
+    <string name="et_hint_username">Username</string>
+    <string name="et_hint_password">Password</string>
+
+    <!-- images -->
+    <string name="img_description">Image</string>
+
+    <!-- toolbars -->
+    <string name="tb_pending_requests">Pending requests</string>
+    <string name="tb_spaces_remaining">\u0020spaces remaining</string>
+
+    <!-- textviews -->
+    <string name="tv_app_name">Transcomfy Driver</string>
+    <string name="tv_bus_allocation">Bus allocation</string>
+    <string name="tv_no_bus">No bus</string>
+    <string name="tv_no_available_spaces">No available spaces</string>
+    <string name="tv_avail_space">Avail bus space</string>
+    <string name="tv_pending_requests">Pending requests</string>
+    <string name="tv_avail_space_for">Avail bus space for</string>
+
+</resources>
