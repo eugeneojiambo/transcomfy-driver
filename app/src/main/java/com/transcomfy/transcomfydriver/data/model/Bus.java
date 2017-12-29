@@ -12,6 +12,7 @@ public class Bus implements Parcelable {
     private Location location;
 //    private List<Request> requests;
     private String driverId;
+    private String busId;
 
     public Bus(){
 
@@ -45,6 +46,10 @@ public class Bus implements Parcelable {
         this.driverId = driverId;
     }
 
+    public void setBusId(String busId) {
+        this.busId = busId;
+    }
+
     public String getId() {
         return id;
     }
@@ -73,6 +78,10 @@ public class Bus implements Parcelable {
         return driverId;
     }
 
+    public String getBusId() {
+        return busId;
+    }
+
     public Bus(Parcel in){
         id = in.readString();
         numberPlate = in.readString();
@@ -82,6 +91,7 @@ public class Bus implements Parcelable {
 //        requests = new ArrayList<>();
 //        in.readList(requests, Request.class.getClassLoader());
         driverId = in.readString();
+        busId = in.readString();
     }
 
     public static final Creator CREATOR = new Creator() {
@@ -107,6 +117,7 @@ public class Bus implements Parcelable {
         dest.writeParcelable(location, flags);
 //        dest.writeList(requests);
         dest.writeString(driverId);
+        dest.writeString(busId);
     }
 
 }

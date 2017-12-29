@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -50,14 +51,6 @@ public class HomeActivity extends AppCompatActivity {
 
         setHome(); // Set up data and refresh UI for home page
 
-        // Set action in the event avail bus space is clicked
-        btnAvailSpace.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                availSpace();
-            }
-        });
-
         // Set action in the event pending requests is clicked
         btnPendingRequests.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,6 +91,14 @@ public class HomeActivity extends AppCompatActivity {
                         if(driver.getBus() == null) {
                             tvNumberPlate.setText(R.string.tv_bus_allocation);
                             tvSpacesAvailable.setText(R.string.tv_no_bus);
+
+                            // Set action in the event avail bus space is clicked
+                            btnAvailSpace.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Toast.makeText(HomeActivity.this, "You have no bus assigned to you. Contact your administrators", Toast.LENGTH_SHORT).show();
+                                }
+                            });
                         } else {
                             tvNumberPlate.setText(driver.getBus().getNumberPlate());
                             tvSpacesAvailable.setText(
@@ -105,13 +106,24 @@ public class HomeActivity extends AppCompatActivity {
                                     .concat(getString(R.string.tv_spaces_available))
                             );
 
-                            if(dataSnapshot.child("bus").child("requests").getValue() != null) {
-                                tvPendingRequests.setText(String.valueOf(dataSnapshot.child("bus").child("requests").getChildrenCount()));
-                            }
+                            // Set action in the event avail bus space is clicked
+                            btnAvailSpace.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    availSpace();
+                                }
+                            });
+                        }
 
-                            /*if(driver.getBus().getRequests() != null) {
-                                tvPendingRequests.setText(String.valueOf(driver.getBus().getRequests().size()));
-                            }*/
+                        DataSnapshot snapshot = dataSnapshot.child("bus").child("requests");
+                        if(snapshot.getValue() != null) {
+                            int i = 0;
+                            for(DataSnapshot snap : snapshot.getChildren()) {
+                                if(snap.child("status").getValue(String.class).equalsIgnoreCase("PENDING")) {
+                                    i++;
+                                    tvPendingRequests.setText(String.valueOf(i));
+                                }
+                            }
                         }
                     }
 

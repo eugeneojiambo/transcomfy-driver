@@ -45,8 +45,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv_name"
-                android:text="@string/tv_app_name"
+                android:id="@+id/tv_number_plate"
+                android:text="@string/chr_ellipsis"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_primary"
                 android:textStyle="bold"
