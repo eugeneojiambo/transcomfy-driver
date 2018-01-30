@@ -13,7 +13,7 @@ import com.transcomfy.transcomfydriver.data.model.Request;
 
 import java.util.List;
 
-public class PendingRequestsRecyclerAdapter extends RecyclerView.Adapter<PendingRequestsRecyclerAdapter.ViewHolder> {
+public class RequestsRecyclerAdapter extends RecyclerView.Adapter<RequestsRecyclerAdapter.ViewHolder> {
 
     public interface OnItemClicked {
         void onItemClicked(Request request);
@@ -24,7 +24,7 @@ public class PendingRequestsRecyclerAdapter extends RecyclerView.Adapter<Pending
 
     private OnItemClicked onItemClicked;
 
-    public PendingRequestsRecyclerAdapter(Context context, List<Request> requests){
+    public RequestsRecyclerAdapter(Context context, List<Request> requests){
         this.context = context;
         this.requests = requests;
     }

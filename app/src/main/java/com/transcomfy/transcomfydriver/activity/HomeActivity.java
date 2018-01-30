@@ -140,7 +140,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void pendingRequests() {
-        Intent intent = new Intent(HomeActivity.this, PendingRequestsActivity.class);
+        Intent intent = new Intent(HomeActivity.this, RequestsActivity.class);
         startActivity(intent);
     }
 

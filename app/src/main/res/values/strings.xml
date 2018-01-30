@@ -31,7 +31,7 @@
     <string name="msg_loading">loading\u2026</string>
 
     <!-- toolbars -->
-    <string name="tb_pending_requests">Pending requests</string>
+    <string name="tb_requests">Requests</string>
     <string name="tb_spaces_remaining">\u0020spaces remaining</string>
 
     <!-- textviews -->
@@ -43,5 +43,7 @@
     <string name="tv_pending_requests">Pending requests</string>
     <string name="tv_avail_space_for">Avail bus space for</string>
     <string name="tv_spaces_available">\u0020spaces available</string>
+    <string name="tv_approved_requests">Approved requests</string>
+    <string name="tv_in_transit">In transit</string>
 
 </resources>
