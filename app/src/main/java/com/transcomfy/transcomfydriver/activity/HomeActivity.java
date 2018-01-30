@@ -124,6 +124,11 @@ public class HomeActivity extends AppCompatActivity {
                                     tvPendingRequests.setText(String.valueOf(i));
                                 }
                             }
+                            if(i == 0) {
+                                tvPendingRequests.setText(R.string.chr_hyphen);
+                            }
+                        } else {
+                            tvPendingRequests.setText(R.string.chr_hyphen);
                         }
                     }
 
