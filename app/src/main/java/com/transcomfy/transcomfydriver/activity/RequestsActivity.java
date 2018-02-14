@@ -42,7 +42,9 @@ import com.transcomfy.transcomfydriver.userinterface.recycleradapter.RequestsRec
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class RequestsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -493,6 +495,15 @@ public class RequestsActivity extends AppCompatActivity implements OnMapReadyCal
         history.setCreatedAt(createdAt);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         database.getReference("users").child(request.getId()).child("history").push().setValue(history);
+
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+
+        Map<String, Object> transaction = new HashMap<>();
+        transaction.put("amount", request.getFare());
+        transaction.put("userId", auth.getCurrentUser().getUid());
+        transaction.put("userName", "Sharon");
+        transaction.put("routeNumber", bus.getRoute());
+        database.getReference("transactions").child(bus.getSaccoId()).push().setValue(transaction);
     }
 
     private void checkLocationPermission() {

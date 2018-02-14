@@ -13,6 +13,8 @@ public class Bus implements Parcelable {
 //    private List<Request> requests;
     private String driverId;
     private String busId;
+    private String saccoId;
+    private String route;
 
     public Bus(){
 
@@ -50,6 +52,14 @@ public class Bus implements Parcelable {
         this.busId = busId;
     }
 
+    public void setSaccoId(String saccoId) {
+        this.saccoId = saccoId;
+    }
+
+    public void setRoute(String route) {
+        this.route = route;
+    }
+
     public String getId() {
         return id;
     }
@@ -82,6 +92,14 @@ public class Bus implements Parcelable {
         return busId;
     }
 
+    public String getSaccoId() {
+        return saccoId;
+    }
+
+    public String getRoute() {
+        return route;
+    }
+
     public Bus(Parcel in){
         id = in.readString();
         numberPlate = in.readString();
@@ -92,6 +110,8 @@ public class Bus implements Parcelable {
 //        in.readList(requests, Request.class.getClassLoader());
         driverId = in.readString();
         busId = in.readString();
+        saccoId = in.readString();
+        route = in.readString();
     }
 
     public static final Creator CREATOR = new Creator() {
@@ -118,6 +138,8 @@ public class Bus implements Parcelable {
 //        dest.writeList(requests);
         dest.writeString(driverId);
         dest.writeString(busId);
+        dest.writeString(saccoId);
+        dest.writeString(route);
     }
 
 }
