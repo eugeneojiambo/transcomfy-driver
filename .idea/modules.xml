@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TranscomfyDriver.iml" filepath="$PROJECT_DIR$/TranscomfyDriver.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/MeshackProject2Driver.iml" filepath="$PROJECT_DIR$/.idea/MeshackProject2Driver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MeshackProject2Driver.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MeshackProject2Driver.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MeshackProject2Driver.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MeshackProject2Driver.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MeshackProject2Driver.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MeshackProject2Driver.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MeshackProject2Driver.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MeshackProject2Driver.app.unitTest.iml" />
     </modules>
   </component>
 </project>

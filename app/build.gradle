@@ -4,8 +4,8 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.transcomfy.transcomfydriver"
-        minSdkVersion 16
-        targetSdkVersion 27
+        minSdkVersion 19
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -24,7 +24,7 @@ dependencies {
     implementation 'com.android.support:design:27.0.2'
     implementation 'com.google.firebase:firebase-auth:11.6.2'
     implementation 'com.google.firebase:firebase-database:11.6.2'
-    compile 'com.google.android.gms:play-services-maps:11.6.2'
+    implementation 'com.google.android.gms:play-services-maps:11.6.2'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.github.rahatarmanahmed:circularprogressview:2.5.0'
     testImplementation 'junit:junit:4.12'
