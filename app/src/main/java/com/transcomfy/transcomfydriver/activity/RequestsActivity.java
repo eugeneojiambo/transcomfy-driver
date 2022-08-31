@@ -8,17 +8,18 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -31,8 +32,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.MutableData;
-import com.google.firebase.database.Transaction;
 import com.google.firebase.database.ValueEventListener;
 import com.transcomfy.transcomfydriver.R;
 import com.transcomfy.transcomfydriver.data.model.Bus;
@@ -241,30 +240,15 @@ public class RequestsActivity extends AppCompatActivity implements OnMapReadyCal
         rvInTransit.setLayoutManager(new LinearLayoutManager(RequestsActivity.this));
 
         RequestsRecyclerAdapter pendingAdapter = new RequestsRecyclerAdapter(RequestsActivity.this, pendingRequests);
-        pendingAdapter.setOnItemClicked(new RequestsRecyclerAdapter.OnItemClicked() {
-            @Override
-            public void onItemClicked(Request request) {
-                pendingRequestOptions(request);
-            }
-        });
+        pendingAdapter.setOnItemClicked(this::pendingRequestOptions);
         rvPendingRequests.setAdapter(pendingAdapter);
 
         RequestsRecyclerAdapter approvedAdapter = new RequestsRecyclerAdapter(RequestsActivity.this, approvedRequests);
-        approvedAdapter.setOnItemClicked(new RequestsRecyclerAdapter.OnItemClicked() {
-            @Override
-            public void onItemClicked(Request request) {
-                approvedRequestOptions(request);
-            }
-        });
+        approvedAdapter.setOnItemClicked(this::approvedRequestOptions);
         rvApprovedRequests.setAdapter(approvedAdapter);
 
         RequestsRecyclerAdapter transitAdapter = new RequestsRecyclerAdapter(RequestsActivity.this, transitRequests);
-        transitAdapter.setOnItemClicked(new RequestsRecyclerAdapter.OnItemClicked() {
-            @Override
-            public void onItemClicked(Request request) {
-                transitRequestOptions(request);
-            }
-        });
+        transitAdapter.setOnItemClicked(this::transitRequestOptions);
         rvInTransit.setAdapter(transitAdapter);
 
         tvPendingRequests.setText("0 ".concat(getString(R.string.tv_pending_requests)));
